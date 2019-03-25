@@ -1,0 +1,21 @@
+
+body {
+	background: #ffdcb2;
+  font-family: Helvetica, Arial, sans-serif;
+
+}
+.wrapper {
+	margin: 60px 0 60px 60px;
+}
+
+#add-emotion-button {
+	font-size: 14px;
+	background: #E5A073;
+	border: none;
+	padding: 10px 15px;
+	margin: 6px;
+  border-radius: 10px;
+  hover: background-color: yellow;
+}
+
+#add-emotion-button: hover {background-color: #fff;}
