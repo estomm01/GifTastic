@@ -20,8 +20,6 @@ $(document).ready(function () {
   renderButtons()
 
 
-
-
   $(document).on("click", ".emotions", function () {
     emotion = $(this).attr("emotion");
     console.log(emotion)
