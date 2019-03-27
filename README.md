@@ -1,4 +1,3 @@
 # GifTastic
 
-test test
-
+TEST
