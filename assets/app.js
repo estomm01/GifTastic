@@ -3,7 +3,7 @@ $(document).ready(function () {
   var emotions = ["Sad", "Happy", "Excited"];
 
   function renderButtons() {
-    $("#buttons-vew").empty()
+    $("#buttons-view").empty()
     //loops through the entire arrive using element
     emotions.forEach(element => {
       //dymanically creating a button
@@ -40,7 +40,6 @@ $(document).ready(function () {
     $.ajax({
       url: queryURL,
       method: "GET"
-
     })
       //After data comes back from the request
       .then(function (response) {
@@ -71,7 +70,6 @@ $(document).ready(function () {
           emotionDiv.append(emotionImage);
           //jquery to dump the images div, going through the loop
          // $("#emotions-view").append(emotionDiv);
-
 
         }
 
