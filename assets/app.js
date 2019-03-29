@@ -41,39 +41,40 @@ $(document).ready(function () {
       url: queryURL,
       method: "GET"
     })
-      //After data comes back from the request
-      .then(function (response) {
-        // console.log(queryURL);
+    //After data comes back from the request
+    .then(function (response) {
+      // console.log(queryURL);
 
-        var results = response.data;
-        console.log(results);
-        //clear eveyrthing before it adds additonal images
-        $("#emotions-view").empty();
-        //Looping through each result item
-        for (var i = 0; i < results.length; i++) {
+      var results = response.data;
+      console.log(results);
+      //clear eveyrthing before it adds additonal images
+      $("#emotions-view").empty();
+      //Looping through each result item
+      for (var i = 0; i < results.length; i++) {
 
-          // Creating and storing a div tag
-          var emotionDiv = $("<div>");
-          //   // Creating a paragraph tag with the result item's rating
-          var p = $("<p>").text("Rating: " + results[i].rating);
+        // Creating and storing a div tag
+        var emotionDiv = $("<div class='col-sm-12 col-md-4'>");
+        //   // Creating a paragraph tag with the result item's rating
+        var p = $("<p>").text("Rating: " + results[i].rating);
 
-          //  Creating and storing an image tag
-          var emotionImage = $("<img>");
+        //  Creating and storing an image tag
+        var emotionImage = $("<img>");
 
-          //need to console log to find the particular data for the fixed still image
-          emotionImage.attr("src", results[i].images.fixed_width_still.url);
-          emotionImage.attr("data-still", results[i].images.fixed_width_still.url);
-          emotionImage.attr("data-animate", results[i].images.original.url);
-          emotionImage.attr("data-state", "still");
-          emotionImage.addClass("gif")
-          emotionDiv.append(p);
-          emotionDiv.append(emotionImage);
-          //jquery to dump the images div, going through the loop
-         // $("#emotions-view").append(emotionDiv);
+        //need to console log to find the particular data for the fixed still image
+        emotionImage.attr("src", results[i].images.fixed_width_still.url);
+        emotionImage.attr("data-still", results[i].images.fixed_width_still.url);
+        emotionImage.attr("data-animate", results[i].images.fixed_width.url);
+        emotionImage.attr("data-state", "still");
+        emotionImage.addClass("gif");
+        emotionImage.attr("style", "width: 100%;")
+        emotionDiv.append(p);
+        emotionDiv.append(emotionImage);
+        //jquery to dump the images div, going through the loop
+        $("#emotions-view").append(emotionDiv);
 
-        }
+      }
 
-      });
+    });
   });
 
   //create an emotionImage.attr for still, animate, and state giphys
