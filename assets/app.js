@@ -1,6 +1,6 @@
 $(document).ready(function () {
   var emotion = '';
-  var emotions = ["Sad", "Happy", "Excited"];
+  var emotions = ["Sad", "Excited", "Surprise", "Anger", "Trust"];
 
   function renderButtons() {
     $("#buttons-view").empty()
